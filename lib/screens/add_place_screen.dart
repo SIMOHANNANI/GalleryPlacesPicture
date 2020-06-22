@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:provider/provider.dart';
 import '../widgets/image_picker.dart';
+import '../widgets/location_picker.dart';
 import '../providers/places.dart';
 class AddPlaceScreen extends StatefulWidget {
   static const routeName = '/addPlace';
@@ -42,13 +43,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                         labelText: 'place title',
                       ),
                     ),
-                    SizedBox(height: 20.0,),
+                    SizedBox(height: 60.0,),
                     ImagePicker(_tokenImage),
+                    SizedBox(height: 40.0,),
+                    LocationPicker(),
                   ],
                 ),
               ),
             ),
           ),
+
           RaisedButton.icon(
             color: Theme
                 .of(context)

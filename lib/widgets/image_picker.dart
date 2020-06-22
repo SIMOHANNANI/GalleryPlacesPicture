@@ -39,20 +39,18 @@ class _ImagePickerState extends State<ImagePicker> {
   Widget build(BuildContext context) {
     return Row(children: <Widget>[
       Container(
-        width: 130.0,
-        height: 130.0,
+        width: 200.0,
+        height: 200.0,
         decoration: BoxDecoration(
-          border: Border.all(
-              width: 3.0, color: Theme.of(context).primaryColorLight),
+          image: _storedImage != null ? DecorationImage(image:AssetImage(_storedImage.path),fit: BoxFit.fill) : null,
+          border: Border.fromBorderSide(
+            BorderSide(width: 2, color:  Theme.of(context).primaryColorLight),
+          ),
+          shape: BoxShape.circle,
         ),
         alignment: Alignment.center,
         child: _storedImage != null
-            ? Image.file(
-                _storedImage,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-              )
+            ? Container(child:Text(''))
             : Text(
                 'choose an image',
                 style: TextStyle(
